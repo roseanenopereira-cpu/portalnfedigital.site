@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Delf Fibra - Internet via fibra óptica em São Paulo. Planos rápidos, instalação grátis e suporte 24h. Navegue com ultra velocidade!">
+    <meta name="keywords" content="Delf Fibra, internet fibra óptica, São Paulo, Nossa Senhora do O, provedor internet, plano internet, fibra óptica SP, SCM">
+    <meta name="author" content="Delf Provedor de Internet LTDA">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Delf Fibra - Internet Fibra Óptica | São Paulo">
+    <meta property="og:description" content="Navegue com ultra velocidade. Planos a partir de R$79,90/mês. Instalação grátis!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://delffibra.com.br">
+    <meta property="og:image" content="https://granditelecom.com.br/wp-content/uploads/2019/12/Banner_Cabec%CC%A7alho_Caboxfibra.jpg">
+    <title>Delf Fibra - Internet Fibra Óptica | Ultra Velocidade em São Paulo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-blue: #0a1628;
+            --navy: #0d1b33;
+            --electric-blue: #0055ff;
+            --cyan-glow: #00c8ff;
+            --soft-white: #f4f7fc;
+            --card-bg: #ffffff;
+            --text-light: #e0e6f0;
+            --text-muted: #8892a4;
+            --accent-green: #00e676;
+            --gradient-1: linear-gradient(135deg, #0055ff 0%, #00c8ff 100%);
+            --gradient-2: linear-gradient(135deg, #0d1b33 0%, #0a1628 100%);
+            --gradient-hero: linear-gradient(160deg, #0a1628 0%, #0d1b33 40%, #001a4d 100%);
+            --shadow-glow: 0 0 40px rgba(0, 200, 255, 0.15);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.18);
+            --border-radius-lg: 20px;
+            --border-radius-md: 14px;
+            --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--soft-white);
+            color: #1a1f2e;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 12px 0;
+            transition: var(--transition-smooth);
+            z-index: 1000;
+        }
+        .navbar.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            padding: 8px 0;
+        }
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.9rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+        .navbar-brand .fibra-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: var(--cyan-glow);
+            border-radius: 50%;
+            margin-left: 3px;
+            animation: pulse-dot 1.8s infinite;
+            vertical-align: middle;
+            position: relative;
+            top: -5px;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 200, 255, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 14px rgba(0, 200, 255, 0);
+            }
+        }
+        .nav-link {
+            color: #c8d6e5 !important;
+            font-weight: 500;
+            margin: 0 6px;
+            transition: var(--transition-smooth);
+            position: relative;
+            font-size: 0.95rem;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 20px;
+            height: 2px;
+            background: var(--cyan-glow);
+            border-radius: 2px;
+            transition: transform 0.3s ease;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+        .nav-link:hover {
+            color: #fff !important;
+        }
+        .btn-whatsapp-nav {
+            background: #25d366;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-whatsapp-nav:hover {
+            background: #1db954;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            color: #fff;
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            background: var(--gradient-hero);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(0, 85, 255, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float-slow 12s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 200, 255, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float-slow 15s ease-in-out infinite reverse;
+            pointer-events: none;
+        }
+        @keyframes float-slow {
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+            33% {
+                transform: translate(40px, -30px);
+            }
+            66% {
+                transform: translate(-20px, 20px);
+            }
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 200, 255, 0.12);
+            border: 1px solid rgba(0, 200, 255, 0.3);
+            color: var(--cyan-glow);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: fadeInUp 0.8s ease;
+        }
+        .hero-title {
+            font-size: 3.8rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.15;
+            margin: 20px 0;
+            animation: fadeInUp 0.8s ease 0.15s both;
+        }
+        .hero-title .highlight {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.45s both;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #fff;
+        }
+        .hero-stat-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .hero-image-wrapper {
+            position: relative;
+            animation: fadeInRight 1s ease 0.5s both;
+        }
+        .hero-image-wrapper img {
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-glow);
+            width: 100%;
+            max-width: 550px;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .btn-hero-primary {
+            background: var(--gradient-1);
+            color: #fff;
+            border: none;
+            border-radius: 40px;
+            padding: 15px 35px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: var(--transition-smooth);
+            box-shadow: 0 10px 30px rgba(0, 85, 255, 0.35);
+            animation: fadeInUp 0.8s ease 0.4s both;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-hero-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(0, 85, 255, 0.55);
+            color: #fff;
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--deep-blue);
+            margin-bottom: 10px;
+        }
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+        }
+        .section-badge {
+            display: inline-block;
+            background: rgba(0, 85, 255, 0.08);
+            color: var(--electric-blue);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        /* PLANOS */
+        .planos-section {
+            background: #fff;
+            padding: 80px 0;
+        }
+        .plano-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            padding: 35px 25px;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+        .plano-card.destaque {
+            border: 2px solid var(--electric-blue);
+            transform: scale(1.04);
+            box-shadow: 0 0 50px rgba(0, 85, 255, 0.2);
+            z-index: 1;
+        }
+        .plano-card.destaque::before {
+            content: 'MAIS POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--gradient-1);
+            color: #fff;
+            padding: 6px 45px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transform: rotate(45deg);
+        }
+        .plano-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        .plano-card.destaque:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+        .plano-icone {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .plano-nome {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--deep-blue);
+        }
+        .plano-velocidade {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--electric-blue);
+            line-height: 1;
+        }
+        .plano-velocidade small {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        .plano-preco {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--deep-blue);
+        }
+        .plano-preco small {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+        .plano-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .plano-features li {
+            padding: 7px 0;
+            color: #444;
+            font-size: 0.9rem;
+        }
+        .plano-features li i {
+            color: var(--accent-green);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        .btn-plano {
+            display: inline-block;
+            background: var(--gradient-1);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 28px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            width: 100%;
+        }
+        .btn-plano:hover {
+            box-shadow: 0 10px 30px rgba(0, 85, 255, 0.4);
+            transform: translateY(-2px);
+            color: #fff;
+        }
+        .btn-plano-outline {
+            background: transparent;
+            border: 2px solid var(--electric-blue);
+            color: var(--electric-blue);
+        }
+        .btn-plano-outline:hover {
+            background: var(--electric-blue);
+            color: #fff;
+        }
+
+        /* IMAGENS SECTION */
+        .imagens-section {
+            background: var(--gradient-2);
+            padding: 80px 0;
+            color: #fff;
+        }
+        .imagens-section .section-title {
+            color: #fff;
+        }
+        .imagem-card {
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition-smooth);
+            height: 100%;
+        }
+        .imagem-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-glow);
+            border-color: rgba(0, 200, 255, 0.4);
+        }
+        .imagem-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .imagem-card-body {
+            padding: 18px;
+        }
+        .imagem-card-body h5 {
+            font-weight: 700;
+            color: #fff;
+            font-size: 1.05rem;
+        }
+        .imagem-card-body p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* DEPOIMENTOS */
+        .depoimentos-section {
+            padding: 80px 0;
+            background: var(--soft-white);
+        }
+        .depoimento-card {
+            background: #fff;
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-card);
+            border-left: 5px solid var(--electric-blue);
+            transition: var(--transition-smooth);
+            height: 100%;
+        }
+        .depoimento-card:hover {
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(-4px);
+        }
+        .depoimento-texto {
+            font-style: italic;
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        .depoimento-autor {
+            font-weight: 700;
+            color: var(--deep-blue);
+        }
+        .depoimento-stars {
+            color: #ffc107;
+            margin-bottom: 8px;
+        }
+
+        /* SOBRE */
+        .sobre-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        .sobre-dados {
+            background: var(--soft-white);
+            border-radius: var(--border-radius-lg);
+            padding: 25px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .sobre-dados dt {
+            font-weight: 700;
+            color: var(--electric-blue);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .sobre-dados dd {
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--deep-blue);
+            color: #c8d6e5;
+            padding: 50px 0 20px;
+        }
+        .footer h5 {
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        .footer a {
+            color: #8892a4;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: var(--cyan-glow);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #8892a4;
+        }
+        .footer-social i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        .footer-social i:hover {
+            color: var(--cyan-glow);
+            transform: translateY(-3px);
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .plano-card.destaque {
+                transform: scale(1);
+            }
+            .plano-card.destaque:hover {
+                transform: translateY(-8px);
+            }
+        }
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-stats {
+                gap: 15px;
+            }
+            .hero-stat-number {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Delf Fibra<span class="fibra-dot"></span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" style="border-color: rgba(255,255,255,0.3);">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#planos">Planos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#imagens">Tecnologia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#depoimentos">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+                <a href="https://wa.me/5511977667316?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20planos%20Delf%20Fibra!" class="btn-whatsapp-nav" target="_blank" rel="noopener">
+                    <i class="bi bi-whatsapp"></i> (11) 97766-7316
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="hero-badge"><i class="bi bi-lightning-charge-fill"></i> Fibra Óptica de Ponta</span>
+                    <h1 class="hero-title">Navegue na <span class="highlight">velocidade</span> que o futuro exige</h1>
+                    <p class="hero-subtitle">Internet fibra óptica com ultra velocidade, estabilidade e suporte 24h. A Delf Fibra conecta você ao mundo sem limites.</p>
+                    <div class="hero-stats mb-4">
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">100%</div>
+                            <div class="hero-stat-label">Fibra Óptica</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">24h</div>
+                            <div class="hero-stat-label">Suporte</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">+500</div>
+                            <div class="hero-stat-label">Clientes</div>
+                        </div>
+                    </div>
+                    <a href="#planos" class="btn-hero-primary"><i class="bi bi-rocket-takeoff-fill me-2"></i> Ver Planos</a>
+                </div>
+                <div class="col-lg-6 hero-image-wrapper">
+                    <img src="https://granditelecom.com.br/wp-content/uploads/2019/12/Banner_Cabec%CC%A7alho_Caboxfibra.jpg"
+                    alt="Infraestrutura de fibra óptica Delf Fibra - Conexão ultrarrápida"
+                    class="img-fluid"
+                    onerror="this.src='https://placehold.co/600x400/0a1628/00c8ff?text=Delf+Fibra';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE SECTION -->
+    <section class="sobre-section" id="sobre">
+        <div class="container">
+            <span class="section-badge">Quem Somos</span>
+            <h2 class="section-title">Conheça a Delf Fibra</h2>
+            <p class="section-subtitle">Uma provedora de internet comprometida com qualidade e inovação.</p>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <p style="font-size:1.05rem; color:#444; line-height:1.8;">
+                        A <strong>Delf Fibra</strong>, razão social <strong>Delf Provedor de Internet LTDA</strong>, foi fundada em 22 de abril de 2026 e já nasceu com a missão de oferecer internet de alta qualidade na região de São Paulo.
+                        Atuamos com <strong>Serviços de Comunicação Multimídia (SCM)</strong>, conforme código 61.10-8-03 da Receita Federal, e nossa situação cadastral está <span style="color: #00c853; font-weight:700;">ATIVA</span>.
+                    </p>
+                    <p style="color:#555;">
+                        Utilizamos tecnologia <strong>100% fibra óptica</strong> para garantir a melhor experiência de navegação, streaming, jogos online e trabalho remoto. Nossa equipe está preparada para oferecer o melhor atendimento e suporte técnico.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="sobre-dados">
+                        <dl>
+                            <dt><i class="bi bi-building me-1"></i> Razão Social</dt>
+                            <dd>Delf Provedor de Internet LTDA</dd>
+                            <dt><i class="bi bi-file-text me-1"></i> CNPJ</dt>
+                            <dd>66.378.858/0001-00</dd>
+                            <dt><i class="bi bi-calendar-check me-1"></i> Data de Abertura</dt>
+                            <dd>22/04/2026</dd>
+                            <dt><i class="bi bi-geo-alt-fill me-1"></i> Endereço</dt>
+                            <dd>Rua Prof João Machado, 69 - Nossa Senhora do O - São Paulo/SP - CEP 02927-000</dd>
+                            <dt><i class="bi bi-envelope me-1"></i> E-mail</dt>
+                            <dd>bruno@homerocontabil.com.br</dd>
+                            <dt><i class="bi bi-telephone me-1"></i> Telefone</dt>
+                            <dd>(11) 97766-7316</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANOS SECTION -->
+    <section class="planos-section" id="planos">
+        <div class="container">
+            <span class="section-badge">Nossos Planos</span>
+            <h2 class="section-title">Escolha o plano ideal para você</h2>
+            <p class="section-subtitle">Conexão estável, rápida e com instalação gratuita.</p>
+            <div class="row g-4 justify-content-center">
+                <!-- Plano Básico -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="plano-card">
+                        <div class="plano-icone"><i class="bi bi-wifi"></i></div>
+                        <h4 class="plano-nome">Plano Light</h4>
+                        <div class="plano-velocidade">200 <small>Mega</small></div>
+                        <div class="plano-preco">R$ 79,90 <small>/mês</small></div>
+                        <ul class="plano-features">
+                            <li><i class="bi bi-check-circle-fill"></i> Download: 200 Mbps</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Upload: 100 Mbps</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Instalação Grátis</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Wi-Fi Turbo incluso</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Suporte via WhatsApp</li>
+                        </ul>
+                        <a href="https://wa.me/5511977667316?text=Ol%C3%A1!%20Quero%20o%20Plano%20Light%20200%20Mega!" class="btn-plano btn-plano-outline" target="_blank">Assinar Plano Light</a>
+                    </div>
+                </div>
+                <!-- Plano Premium -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="plano-card destaque">
+                        <div class="plano-icone"><i class="bi bi-router-fill"></i></div>
+                        <h4 class="plano-nome">Plano Turbo</h4>
+                        <div class="plano-velocidade">500 <small>Mega</small></div>
+                        <div class="plano-preco">R$ 109,90 <small>/mês</small></div>
+                        <ul class="plano-features">
+                            <li><i class="bi bi-check-circle-fill"></i> Download: 500 Mbps</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Upload: 250 Mbps</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Instalação Grátis</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Wi-Fi 6 incluso</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Suporte Prioritário 24h</li>
+                            <li><i class="bi bi-check-circle-fill"></i> IP Fixo (sob consulta)</li>
+                        </ul>
+                        <a href="https://wa.me/5511977667316?text=Ol%C3%A1!%20Quero%20o%20Plano%20Turbo%20500%20Mega!" class="btn-plano" target="_blank">Assinar Plano Turbo</a>
+                    </div>
+                </div>
+                <!-- Plano Ultra -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="plano-card">
+                        <div class="plano-icone"><i class="bi bi-speedometer2"></i></div>
+                        <h4 class="plano-nome">Plano Ultra</h4>
+                        <div class="plano-velocidade">1 <small>Giga</small></div>
+                        <div class="plano-preco">R$ 159,90 <small>/mês</small></div>
+                        <ul class="plano-features">
+                            <li><i class="bi bi-check-circle-fill"></i> Download: 1 Gbps</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Upload: 500 Mbps</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Instalação Grátis</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Wi-Fi 6 Premium</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Suporte VIP 24h</li>
+                            <li><i class="bi bi-check-circle-fill"></i> IP Fixo incluso</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Streaming liberado</li>
+                        </ul>
+                        <a href="https://wa.me/5511977667316?text=Ol%C3%A1!%20Quero%20o%20Plano%20Ultra%201%20Giga!" class="btn-plano btn-plano-outline" target="_blank">Assinar Plano Ultra</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGENS / TECNOLOGIA SECTION -->
+    <section class="imagens-section" id="imagens">
+        <div class="container">
+            <span class="section-badge" style="background:rgba(255,255,255,0.1); color:#00c8ff;">Nossa Tecnologia</span>
+            <h2 class="section-title">Infraestrutura de Fibra Óptica</h2>
+            <p class="section-subtitle" style="color:#8892a4;">Conheça mais sobre a tecnologia que nos move.</p>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="imagem-card">
+                        <img src="https://bmitelecom.com.br/wp-content/uploads/2024/05/post-2.jpg"
+                        alt="Técnico instalando fibra óptica residencial"
+                        onerror="this.src='https://placehold.co/400x250/0d1b33/00c8ff?text=Instala%C3%A7%C3%A3o+Fibra';">
+                        <div class="imagem-card-body">
+                            <h5>Instalação Profissional</h5>
+                            <p>Equipe técnica qualificada realiza a instalação da fibra óptica na sua residência com agilidade e segurança, seguindo os mais altos padrões de qualidade.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="imagem-card">
+                        <img src="https://blog.intelbras.com.br/wp-content/uploads/2019/01/internet-via-fibra-optica.png"
+                        alt="Conexão de internet via fibra óptica - velocidade e estabilidade"
+                        onerror="this.src='https://placehold.co/400x250/0d1b33/00c8ff?text=Fibra+%C3%93ptica';">
+                        <div class="imagem-card-body">
+                            <h5>Velocidade Absurda</h5>
+                            <p>A fibra óptica permite transmissão de dados na velocidade da luz, garantindo download e upload ultrarrápidos, ideais para streaming 4K e jogos online.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="imagem-card">
+                        <img src="https://www.instaltec.com.br/wp-content/uploads/2022/03/Fibra-optica-e-um-meio-fisico-o-qual-possibilita-a-transmissao-de-luz-por-reflexoes-continuas.jpg"
+                        alt="Cabos de fibra óptica transmitindo luz - tecnologia de ponta"
+                        onerror="this.src='https://placehold.co/400x250/0d1b33/00c8ff?text=Tecnologia+Luz';">
+                        <div class="imagem-card-body">
+                            <h5>Transmissão por Luz</h5>
+                            <p>A fibra óptica utiliza reflexões contínuas de luz para transportar dados. Essa tecnologia elimina interferências eletromagnéticas e garante sinal puro e estável.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="imagem-card">
+                        <img src="https://dropsdocotidiano.com/wp-content/uploads/2021/08/fibra-optica-claro.jpg"
+                        alt="Conexão fibra óptica Delf Fibra - internet de alta performance"
+                        onerror="this.src='https://placehold.co/400x250/0d1b33/00c8ff?text=Conex%C3%A3o+Premium';">
+                        <div class="imagem-card-body">
+                            <h5>Conexão Premium</h5>
+                            <p>A Delf Fibra oferece conexão de altíssima performance com baixíssima latência, perfeita para gamers, criadores de conteúdo e empresas que não podem parar.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="imagem-card">
+                        <img src="https://granditelecom.com.br/wp-content/uploads/2019/12/Banner_Cabec%CC%A7alho_Caboxfibra.jpg"
+                        alt="Infraestrutura de rede Delf Fibra - datacenter e backbone"
+                        onerror="this.src='https://placehold.co/400x250/0d1b33/00c8ff?text=Backbone+Delf';">
+                        <div class="imagem-card-body">
+                            <h5>Backbone Robusto</h5>
+                            <p>Nossa infraestrutura de backbone é dimensionada para suportar milhares de conexões simultâneas sem perda de qualidade ou velocidade.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS SECTION -->
+    <section class="depoimentos-section" id="depoimentos">
+        <div class="container">
+            <span class="section-badge">O Que Dizem</span>
+            <h2 class="section-title">Depoimentos de Clientes</h2>
+            <p class="section-subtitle">A satisfação de quem já navega com a Delf Fibra.</p>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="depoimento-card">
+                        <div class="depoimento-stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="depoimento-texto">"Troquei meu provedor antigo pela Delf Fibra e a diferença é absurda. Agora consigo fazer upload de vídeos em minutos. Equipe nota 10!"</p>
+                        <p class="depoimento-autor">— Camila R., Vila Pirituba</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="depoimento-card">
+                        <div class="depoimento-stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="depoimento-texto">"Jogo online toda noite e desde que contratei o plano de 500 Mega nunca mais tive lag. Latência baixíssima, recomendo demais!"</p>
+                        <p class="depoimento-autor">— Lucas M., Nossa Senhora do O</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="depoimento-card">
+                        <div class="depoimento-stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="depoimento-texto">"Atendimento rápido, instalação no mesmo dia e internet voando. Minha família toda usa ao mesmo tempo e ninguém reclama de lentidão."</p>
+                        <p class="depoimento-autor">— Ana P., Freguesia do Ó</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO / CALL TO ACTION -->
+    <section id="contato" style="background: var(--gradient-2); padding: 80px 0; color: #fff;">
+        <div class="container text-center">
+            <span class="section-badge" style="background:rgba(255,255,255,0.1); color:#00c8ff;">Fale Conosco</span>
+            <h2 class="section-title" style="color:#fff;">Pronto para navegar na velocidade da luz?</h2>
+            <p style="color:#8892a4; max-width:600px; margin:0 auto 30px;">
+                Entre em contato agora mesmo pelo WhatsApp e garanta a instalação gratuita da sua internet fibra óptica Delf Fibra.
+            </p>
+            <a href="https://wa.me/5511977667316?text=Ol%C3%A1!%20Quero%20assinar%20um%20plano%20Delf%20Fibra!" class="btn-hero-primary" style="font-size:1.1rem; padding: 18px 40px;" target="_blank" rel="noopener">
+                <i class="bi bi-whatsapp me-2"></i> Chamar no WhatsApp
+            </a>
+            <p style="margin-top:20px; color:#8892a4;">
+                <i class="bi bi-envelope me-1"></i> bruno@homerocontabil.com.br &nbsp;|&nbsp;
+                <i class="bi bi-geo-alt-fill me-1"></i> Rua Prof João Machado, 69 - São Paulo/SP
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5>Delf Fibra</h5>
+                    <p style="color:#8892a4; font-size:0.9rem;">Delf Provedor de Internet LTDA<br>CNPJ: 66.378.858/0001-00<br>SCM 61.10-8-03 · Situação: Ativa</p>
+                    <div class="footer-social">
+                        <i class="bi bi-whatsapp"></i>
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-facebook"></i>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Links Úteis</h5>
+                    <ul style="list-style:none; padding:0;">
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#planos">Planos</a></li>
+                        <li><a href="#depoimentos">Depoimentos</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Legal</h5>
+                    <ul style="list-style:none; padding:0;">
+                        <li><a href="privacidade.html" target="_blank">Política de Privacidade</a></li>
+                        <li><a href="termos.html" target="_blank">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Atendimento</h5>
+                    <p style="color:#8892a4; font-size:0.85rem;">
+                        <i class="bi bi-telephone"></i> (11) 97766-7316<br>
+                        <small>Seg a Sex: 8h às 18h<br>Sáb: 9h às 13h</small>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Delf Fibra. Todos os direitos reservados. | Desenvolvido com ❤️ em São Paulo/SP
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Close mobile menu
+                    const navCollapse = document.getElementById('navMenu');
+                    if (navCollapse.classList.contains('show')) {
+                        navCollapse.classList.remove('show');
+                    }
+                }
+            });
+        });
+
+        // Update active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
